@@ -76,12 +76,12 @@ class Routes < SchoolSystem
       StudentsController.new(env).destroy
     when '/update_student'
       StudentsController.new(env).update
-    # else
-    #   status = '404'
-    #   headers = {"Content-Type" => 'text/html', "Content-Length" => '60'}
-    #   response(status, headers) do
-    #     erb :not_found
-    #   end
+    else
+      status = '404'
+      headers = {"Content-Type" => 'text/html', "Content-Length" => '60'}
+      response(status, headers) do
+        erb :not_found
+      end
     end
   end
 end
