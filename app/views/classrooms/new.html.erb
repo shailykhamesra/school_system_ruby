@@ -3,7 +3,6 @@
   <head>
     <script>
       function fetchSchoolId() {
-        console.log('here');
         var url = new URL(window.location.href);
         var urlValue = url.searchParams.get("id");
         document.getElementById('schoolId').value = urlValue;
@@ -20,7 +19,7 @@
 		Class No:<br>
 		<input type="text" name="class_no">
 		<br>
-		<input type="hidden" name="school_id" id="schoolId" value='14' >
+		<input type="hidden" name="school_id" id="schoolId" value="" >
 		<br>
 		<br>
 		<input type="submit" value="Submit">

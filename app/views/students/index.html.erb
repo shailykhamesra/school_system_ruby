@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <script>
+      function fetchClassRoomId() {
+        var url = new URL(window.location.href);
+        var urlValue = url.searchParams.get("id");
+        return urlValue;
+      }
+    </script>
   </head>
   <body>
     <h1>Students</h1>
@@ -26,4 +34,4 @@
     </table>
   </body>
 </html>
-<a href='' onclick="this.href='/show?id='+ fetchClassRoomId()">back</a>
+<a href='' onclick="this.href='/show_classroom?id='+ fetchClassRoomId()">back</a>

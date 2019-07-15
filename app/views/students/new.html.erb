@@ -3,7 +3,6 @@
   <head>
     <script>
       function fetchClassRoomId() {
-        console.log('here');
         var url = new URL(window.location.href);
         var urlValue = url.searchParams.get("id");
         document.getElementById('classroomId').value = urlValue;
