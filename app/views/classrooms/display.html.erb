@@ -1,0 +1,12 @@
+<html>
+  <body>
+    <h1><center>School System</h2>
+    <h3><center>Class Room</h3>
+    <p><center>
+    <strong> Room <%= @classroom.room_no %></strong>
+    <strong> Class <%= @classroom.class_no %></strong>
+    <strong> removed from school</strong>
+    </p> 
+    <a href="/index?id=<%= @classroom.school_id %>">back</a>
+  </body>
+</html>

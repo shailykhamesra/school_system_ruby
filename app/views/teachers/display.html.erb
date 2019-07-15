@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <h1><center>School System</h2>
+    <h3><center>Teacher</h3>
+    <p><center>
+    <strong> Name <%= @teacher.name %></strong>
+    <strong> Address <%= @teacher.address %></strong>
+    <strong> Phone No <%= @teacher.phone_no %></strong>
+    <strong> Gender <%= @teacher.gender %></strong>
+    <strong> removed from school</strong>
+    </p> 
+    <a href="/index_teachers?id=<%= @teacher.school_id %>">back</a>
+  </body>
+</html>

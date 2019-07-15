@@ -1,0 +1,24 @@
+<h1><centre>Listing Schools</h1>
+<table>
+  <tr>
+    <th><centre>Id</th>
+    <th><centre>Name</th>
+    <th><centre>Address</th>
+    <th><centre>Phone No.</th>
+    <th><centre>code</th>
+    <th><centre>action</th>
+    <th colspan="12"></th>
+  </tr>
+  <% @schools.each do |school| %>
+    <tr>
+      <td><%= school.id %></td>
+      <td><%= school.name %></td>
+      <td><%= school.address %></td>
+      <td><%= school.phone_no %></td>
+      <td><%= school.code %></td>
+      <td><a href='/show?id=<%= school.id %>'>Edit</a></td>
+      <td><a href='/delete?id=<%= school.id %>'>Delete</a></td>
+    </tr>
+  <% end %>
+</table>
+<a href="/">back</a>

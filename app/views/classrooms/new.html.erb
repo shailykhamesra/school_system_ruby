@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function fetchSchoolId() {
+        console.log('here');
+        var url = new URL(window.location.href);
+        var urlValue = url.searchParams.get("id");
+        document.getElementById('schoolId').value = urlValue;
+        return urlValue;
+      }
+    </script>
+  </head>
+  <body onload="fetchSchoolId()">
+	<h1><center>New Classroom</h2>
+	  <form action="/submit_classroom">
+		Room No:<br>
+		<input type="text" name="room_no">
+		<br>
+		Class No:<br>
+		<input type="text" name="class_no">
+		<br>
+		<input type="hidden" name="school_id" id="schoolId" value='14' >
+		<br>
+		<br>
+		<input type="submit" value="Submit">
+	  </form> 
+  </body>
+</html>
+<a href='' onclick="this.href='/show?id='+ fetchSchoolId()">back</a>

@@ -1,0 +1,21 @@
+<h1><center>Edit Teacher Information</h2>
+  <form action="/update_teacher?id=<%= @teacher.id %>">
+	Name:<br>
+	<input type="text" name="name" value='<%= @teacher.name %>'>
+	<br>
+	Address:<br>
+	<input type="text" name="address" value='<%= @teacher.address %>'>
+	<br>
+	Phone No:<br>
+	<input type="text" name="phone_no" value='<%= @teacher.phone_no %>'>
+	<br>
+	Gender:<br>
+	<input type="text" name="gender" value='<%= @teacher.gender %>'>
+	<br>
+	<input type="hidden" name="school_id" value='<%= @teacher.school_id %>' >
+	<input type="hidden" name="id" value='<%= @teacher.id %>' >
+	<br>
+	<br>
+	<input type="submit" value="Submit">
+  </form>
+<a href="/index_teachers?id=<%= @teacher.school_id %>">back</a>

@@ -1,0 +1,19 @@
+<h1><center>Edit Classroom</h2>
+  <form action="/update_classroom?id=<%= @classroom.id %>">
+	Room No:<br>
+	<input type="text" name="room_no" value='<%= @classroom.room_no %>'>
+	<br>
+	Class No:<br>
+	<input type="text" name="class_no" value='<%= @classroom.class_no %>'>
+	<br>
+	<input type="hidden" name="school_id" value='<%= @classroom.school_id %>' >
+	<input type="hidden" name="id" value='<%= @classroom.id %>' >
+	<br>
+	<br>
+	<input type="submit" value="Submit">
+  </form>
+<h2>Students</h2>
+<a href='/index_students?id=<%= @classroom.id %>'>View all Students</a>
+<a href='/new_student?id=<%= @classroom.id %>'>Add Students</a>
+<br><br>
+<a href="/index?id=<%= @classroom.school_id %>">back</a>

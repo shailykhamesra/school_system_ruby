@@ -1,0 +1,7 @@
+# config/database.yml
+host: 'localhost'
+adapter: 'postgresql'
+encoding: utf-8
+database: 'database_test'
+reconnect: false
+pool: 5

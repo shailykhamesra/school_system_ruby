@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  </head>
+  <body>
+    <h1>Students</h1>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone No</th>
+        <th>Gender</th>
+        <th colspan="3"></th>
+      </tr>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.id %></td>
+          <td><%= student.name %></td>
+          <td><%= student.address %></td>
+          <td><%= student.phone_no %></td>
+          <td><%= student.gender %></td>
+          <td><a href='/show_student?id=<%= student.id %>'>Edit</a></td>
+          <td><a href='/delete_student?id=<%= student.id %>'>Delete</a></td>
+        </tr>
+      <% end %>
+    </table>
+  </body>
+</html>
+<a href='' onclick="this.href='/show?id='+ fetchClassRoomId()">back</a>
