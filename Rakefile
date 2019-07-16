@@ -64,12 +64,12 @@ namespace :g do
 
     File.open(path, 'w') do |file|
       file.write <<-EOF
-class #{migration_class} < ActiveRecord::Migration[4.2]
+      class #{migration_class} < ActiveRecord::Migration[4.2]
 
-  def change
-  end
+        def change
+        end
 
-end
+      end
       EOF
     end
 
