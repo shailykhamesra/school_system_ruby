@@ -38,11 +38,4 @@ class SchoolsController < ApplicationController
       erb 'schools/display'
     end
   end
-
-  # private 
-
-  #  # def school_params
-  #  # 	params.permit(:name, :address, :phone_no, :code)
-  #  # end
-
 end

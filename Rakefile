@@ -74,6 +74,6 @@ namespace :g do
     end
 
     puts "Migration #{path} created"
-    abort # needed stop other tasks
+    abort
   end
 end

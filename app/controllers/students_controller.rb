@@ -38,10 +38,4 @@ class StudentsController < ApplicationController
       erb 'students/display'
     end
   end
-
-  private
-
-  # def student_params
-  #   params.require(:student).permit(:name, :address, :phone_no, :gender, :school_id, :classroom_id)
-  # end
 end

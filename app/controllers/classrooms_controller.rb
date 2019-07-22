@@ -37,11 +37,4 @@ class ClassroomsController < ApplicationController
       erb 'classrooms/display'
     end
   end
-
-  private
-
-  # def classroom_params
-  #   params.require(:classroom).permit(:room_no, :class_no, :school_id, :teacher_id)
-  # end
-
 end
