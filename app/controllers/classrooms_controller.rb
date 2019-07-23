@@ -1,14 +1,14 @@
 require_relative 'application_controller'
 class ClassroomsController < ApplicationController
   def show
-    @classroom = Classroom.find(params['id'])
+    fetch_classroom
     response(status=nil, headers=nil) do
       erb 'classrooms/edit'
     end
   end
 
   def index
-    @classrooms = School.find(params['id']).classrooms.all
+    @classrooms = Classroom.where(school_id: params['id'])
     response(status=nil, headers=nil) do
       erb 'classrooms/index'
     end
@@ -23,7 +23,7 @@ class ClassroomsController < ApplicationController
   end
 
   def update
-    @classroom = Classroom.find(params['id'])
+    fetch_classroom
     @classroom.update(room_no: params['room_no'], class_no: params['class_no'], school_id: params['school_id'])
     response(status=nil, headers=nil) do
       erb 'classrooms/show'
@@ -31,10 +31,16 @@ class ClassroomsController < ApplicationController
   end
 
   def destroy
-    @classroom = Classroom.find(params['id'])
+    fetch_classroom
     @classroom.destroy
     response(status=nil, headers=nil) do
       erb 'classrooms/display'
     end
+  end
+
+  private
+
+  def fetch_classroom
+    @classroom = Classroom.find(params['id'])
   end
 end

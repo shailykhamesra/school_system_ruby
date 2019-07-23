@@ -17,14 +17,14 @@ class SchoolsController < ApplicationController
   end
 
   def show
-    @school = School.find(params['id'])
+    fetch_shcool
     response(status=nil, headers=nil) do
       erb 'schools/edit'
     end
   end
 
   def update
-    @school = School.find(params['id'])
+    fetch_shcool
     @school.update(name: params['name'], address: params['address'], phone_no: params['phone_number'], code: params['code'])
     response(status=nil, headers=nil) do
       erb 'schools/show'
@@ -32,10 +32,16 @@ class SchoolsController < ApplicationController
   end
 
   def destroy
-    @school = School.find(params['id'])
+    fetch_shcool
     @school.destroy
     response(status=nil, headers=nil) do
       erb 'schools/display'
     end
+  end
+
+  private
+
+  def fetch_shcool
+    @school = School.find(params['id'])
   end
 end

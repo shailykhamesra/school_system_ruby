@@ -1,13 +1,6 @@
 require_relative 'application_controller'
 class TeachersController < ApplicationController
 
-  def index
-    @teachers = School.find(params['id']).teachers.all
-    response(status=nil, headers=nil) do
-      erb 'teachers/index'
-    end
-  end
-
   def create
     @teacher = Teacher.new(name: params['name'], address: params['address'], phone_no: params['phone_no'], gender: params['gender'], school_id: params['school_id'])
     @teacher.save
@@ -17,14 +10,14 @@ class TeachersController < ApplicationController
   end
 
   def show
-    @teacher = Teacher.find(params['id'])
+    fetch_teacher
     response(status=nil, headers=nil) do
       erb 'teachers/edit'
     end
   end
 
   def update
-    @teacher = Teacher.find(params['id'])
+    fetch_teacher
     @teacher.update(name: params['name'], address: params['address'], phone_no: params['phone_no'], gender: params['gender'], school_id: params['school_id'])
     response(status=nil, headers=nil) do
       erb 'teachers/show'
@@ -32,10 +25,23 @@ class TeachersController < ApplicationController
   end
 
   def destroy
-    @teacher = Teacher.find(params['id'])
+    fetch_teacher
     @teacher.destroy
     response(status=nil, headers=nil) do
       erb 'teachers/display'
     end
+  end
+
+  def index
+    @teachers = Teacher.where(school_id: params['id'])
+    response(status=nil, headers=nil) do
+      erb 'teachers/index'
+    end
+  end
+
+  private
+  
+  def fetch_teacher
+    @teacher = Teacher.find(params['id'])
   end
 end
